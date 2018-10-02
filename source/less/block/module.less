@@ -203,7 +203,7 @@
   }
 }
 
-.module__foot {
+.module__bottom {
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
@@ -233,6 +233,14 @@
 
 .module__left {
   @media (min-width: @tablet) {
-    margin-right: 20px;
+    margin-right: 10px;
+  }
+}
+
+.module__right {
+  text-align: right;
+
+  @media (min-width: @tablet) {
+    text-align: left;
   }
 }
