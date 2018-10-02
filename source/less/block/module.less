@@ -173,6 +173,12 @@
 
 .module__date {
   display: block;
+
+  text-align: right;
+
+  @media (min-width: @tablet) {
+    text-align: left;
+  }
 }
 
 .module__message {
@@ -209,12 +215,13 @@
   }
 }
 
-.module__bottom {
+.module__stats {
   .font-size(14);
   .line-height(16);
 
   display: flex;
   justify-content: space-between;
+  margin: 0;
   margin-top: 20px;
 
   @media (min-width: @tablet) {
@@ -226,10 +233,9 @@
   }
 }
 
-.module__left,
-.module__right {
+.module__degree,
+.module__humidity {
   display: block;
-  width: 48%;
   margin: 0;
 
   strong {
@@ -237,16 +243,34 @@
   }
 }
 
-.module__left {
+.module__degree {
   @media (min-width: @tablet) {
-    margin-right: 10px;
+    margin-right: 25px;
   }
 }
 
-.module__right {
+.module__humidity {
   text-align: right;
 
   @media (min-width: @tablet) {
     text-align: left;
+  }
+}
+
+.module__buttons {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  margin-top: 20px;
+
+  @media (min-width: @tablet) {
+    justify-content: flex-start;
+    margin-top: 30px;
+  }
+
+  .button:first-child {
+    @media (min-width: @tablet) {
+      margin-right: 20px;
+    }
   }
 }
