@@ -164,6 +164,15 @@
   }
 }
 
+.grid__cell--l {
+  .module__message {
+    @media (min-width: @tablet) {
+      .font-size(24);
+      .line-height(28);
+    }
+  }
+}
+
 .module__type {
   display: block;
 
@@ -195,8 +204,8 @@
   border-radius: 19px;
 
   @media (min-width: @tablet) {
-    .font-size(24);
-    .line-height(28);
+    .font-size(20);
+    .line-height(23);
 
     padding: 20px;
   }
