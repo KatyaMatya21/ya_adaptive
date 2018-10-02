@@ -1,6 +1,9 @@
 .module {
   position: relative;
 
+  display: flex;
+  flex-direction: column;
+
   background-color: @gray-light;
   border-radius: 20px;
 
@@ -168,6 +171,7 @@
 }
 
 .module__message {
+  margin-top: auto;
   padding: 15px;
 
   font-size: 18px;
@@ -197,4 +201,33 @@
   @media (min-width: @tablet) {
     margin-top: 30px;
   }
+}
+
+.module__stats {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+
+  font-size: 14px;
+  line-height: 16px;
+
+  @media (min-width: @tablet) {
+    justify-content: flex-start;
+    margin-top: 30px;
+
+    font-size: 18px;
+    line-height: 21px;
+  }
+}
+
+.module__degree {
+  display: block;
+
+  @media (min-width: @tablet) {
+    margin-right: 20px;
+  }
+}
+
+.module__humidity {
+  display: block;
 }
