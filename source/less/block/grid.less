@@ -1,8 +1,35 @@
 .grid {
   display: grid;
   grid-gap: 15px;
+  grid-template-columns: auto;
 
   @media (min-width: @tablet) {
+    grid-auto-rows: auto;
+    grid-template-columns: repeat(6, 1fr);
+  }
 
+  @media (min-width: @desktop) {
+    grid-auto-flow: dense;
+  }
+}
+
+.grid__cell--l {
+  @media (min-width: @tablet) {
+    grid-column: span 4;
+    grid-row: span 3;
+  }
+}
+
+.grid__cell--m {
+  @media (min-width: @tablet) {
+    grid-column: span 3;
+    grid-row: span 1;
+  }
+}
+
+.grid__cell--s {
+  @media (min-width: @tablet) {
+    grid-column: span 2;
+    grid-row: span 1;
   }
 }

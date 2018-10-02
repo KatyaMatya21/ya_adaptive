@@ -10,86 +10,129 @@
 <body>
 
 @@include('partials/page-header.html')
-<main class="page-content container">
+<main class="page-content wrap">
 
 <h2 class="page-content__title">Лента событий</h2>
 
   <div class="grid">
-    <article class="module module--l">
-      <h3 class="module__title">Еженедельный отчет по расходам ресурсов</h3>
-      <div class="module__details">
-        <span class="module__type">Сенсоры потребления</span>
-        <span class="module__date">19:00, Сегодня</span>
+    <article class="module grid__cell grid__cell--l">
+      <div class="module__top">
+        <h3 class="module__title">Еженедельный отчет по расходам ресурсов</h3>
+        <div class="module__details">
+          <span class="module__type">Сенсоры потребления</span>
+          <span class="module__date">19:00, Сегодня</span>
+        </div>
+      </div>
+      <div class="module__message">
+        Так держать! За последнюю неделю вы потратили на 10% меньше ресурсов, чем неделей ранее.
       </div>
     </article>
-    <article class="module module--s">
-      <h3 class="module__title">Дверь открыта</h3>
-      <div class="module__details">
-        <span class="module__type">Сенсор входной двери</span>
-        <span class="module__date">18:50, Сегодня</span>
+    <article class="module grid__cell grid__cell--s">
+      <div class="module__top">
+        <h3 class="module__title">Дверь открыта</h3>
+        <div class="module__details">
+          <span class="module__type">Сенсор входной двери</span>
+          <span class="module__date">18:50, Сегодня</span>
+        </div>
       </div>
     </article>
-    <article class="module module--s">
-      <h3 class="module__title">Уборка закончена</h3>
-      <div class="module__details">
-        <span class="module__type">Пылесос</span>
-        <span class="module__date">18:45, Сегодня</span>
+    <article class="module grid__cell grid__cell--s">
+      <div class="module__top">
+        <h3 class="module__title">Уборка закончена</h3>
+        <div class="module__details">
+          <span class="module__type">Пылесос</span>
+          <span class="module__date">18:45, Сегодня</span>
+        </div>
       </div>
     </article>
-    <article class="module module--s">
-      <h3 class="module__title">Новый пользователь</h3>
-      <div class="module__details">
-        <span class="module__type">Роутер</span>
-        <span class="module__date">18:45, Сегодня</span>
+    <article class="module grid__cell grid__cell--s">
+      <div class="module__top">
+        <h3 class="module__title">Новый пользователь</h3>
+        <div class="module__details">
+          <span class="module__type">Роутер</span>
+          <span class="module__date">18:45, Сегодня</span>
+        </div>
       </div>
     </article>
-    <article class="module module--m">
-      <h3 class="module__title">Изменен климатический режим</h3>
-      <div class="module__details">
-        <span class="module__type">Сенсор микроклимата</span>
-        <span class="module__date">18:30, Сегодня</span>
+    <article class="module grid__cell grid__cell--m">
+      <div class="module__top">
+        <h3 class="module__title">Изменен климатический режим</h3>
+        <div class="module__details">
+          <span class="module__type">Сенсор микроклимата</span>
+          <span class="module__date">18:30, Сегодня</span>
+        </div>
+      </div>
+      <div class="module__message">
+        Установлен климатический режим «Фиджи»
       </div>
     </article>
-    <article class="module module--m module--alert">
-      <h3 class="module__title">Невозможно включить кондиционер</h3>
-      <div class="module__details">
-        <span class="module__type">Кондиционер</span>
-        <span class="module__date">18:21, Сегодня</span>
+    <article class="module module--alert grid__cell grid__cell--m">
+      <div class="module__top">
+        <h3 class="module__title">Невозможно включить кондиционер</h3>
+        <div class="module__details">
+          <span class="module__type">Кондиционер</span>
+          <span class="module__date">18:21, Сегодня</span>
+        </div>
+      </div>
+      <div class="module__message">
+        В комнате открыто окно, закройте его и повторите попытку
       </div>
     </article>
-    <article class="module module--m">
-      <h3 class="module__title">Музыка включена</h3>
-      <div class="module__details">
-        <span class="module__type">Яндекс.Станция</span>
-        <span class="module__date">18:16, Сегодня</span>
+    <article class="module grid__cell grid__cell--m">
+      <div class="module__top">
+        <h3 class="module__title">Музыка включена</h3>
+        <div class="module__details">
+          <span class="module__type">Яндекс.Станция</span>
+          <span class="module__date">18:16, Сегодня</span>
+        </div>
+      </div>
+      <div class="module__message">
+        Сейчас проигрывается:
       </div>
     </article>
-    <article class="module module--m">
-      <h3 class="module__title">Заканчивается молоко</h3>
-      <div class="module__details">
-        <span class="module__type">Холодильник</span>
-        <span class="module__date">17:23, Сегодня</span>
+    <article class="module grid__cell grid__cell--m">
+      <div class="module__top">
+        <h3 class="module__title">Заканчивается молоко</h3>
+        <div class="module__details">
+          <span class="module__type">Холодильник</span>
+          <span class="module__date">17:23, Сегодня</span>
+        </div>
+      </div>
+      <div class="module__message">
+        Кажется, в холодильнике заканчивается молоко. Вы хотите добавить его в список покупок?
       </div>
     </article>
-    <article class="module module--s">
-      <h3 class="module__title">Зарядка завершена</h3>
-      <div class="module__details">
-        <span class="module__type">Оконный сенсор</span>
-        <span class="module__date">16:22, Сегодня</span>
+    <article class="module grid__cell grid__cell--s">
+      <div class="module__top">
+        <h3 class="module__title">Зарядка завершена</h3>
+        <div class="module__details">
+          <span class="module__type">Оконный сенсор</span>
+          <span class="module__date">16:22, Сегодня</span>
+        </div>
+      </div>
+      <div class="module__message">
+        Ура! Устройство «Оконный сенсор» снова в строю!
       </div>
     </article>
-    <article class="module module--s">
-      <h3 class="module__title">Вода вскипела</h3>
-      <div class="module__details">
-        <span class="module__type">Чайник</span>
-        <span class="module__date">16:20, Сегодня</span>
+    <article class="module module--alert grid__cell grid__cell--l">
+      <div class="module__top">
+        <h3 class="module__title">Пылесос застрял</h3>
+        <div class="module__details">
+          <span class="module__type">Сенсор движения</span>
+          <span class="module__date">16:17, Сегодня</span>
+        </div>
+      </div>
+      <div class="module__message">
+        Робопылесос не смог сменить свое местоположение в течение последних 3 минут. Похоже, ему нужна помощь.
       </div>
     </article>
-    <article class="module module--l module--alert">
-      <h3 class="module__title">Пылесос застрял</h3>
-      <div class="module__details">
-        <span class="module__type">Сенсор движения</span>
-        <span class="module__date">16:17, Сегодня</span>
+    <article class="module grid__cell grid__cell--s">
+      <div class="module__top">
+        <h3 class="module__title">Вода вскипела</h3>
+        <div class="module__details">
+          <span class="module__type">Чайник</span>
+          <span class="module__date">16:20, Сегодня</span>
+        </div>
       </div>
     </article>
   </div>
