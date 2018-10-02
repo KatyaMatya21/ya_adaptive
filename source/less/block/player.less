@@ -4,8 +4,16 @@
 }
 
 .player__text {
+  .font-size(18);
+  .line-height(22);
+
   margin: 0;
   margin-bottom: 15px;
+
+  @media (min-width: @tablet) {
+    .font-size(20);
+    .line-height(23);
+  }
 }
 
 .player__right {
@@ -40,6 +48,9 @@
 }
 
 .player__name {
+  .font-size(18);
+  .line-height(21);
+
   max-width: calc(100% - 30px);
   margin: 0;
 
@@ -47,6 +58,11 @@
 
   white-space: nowrap;
   text-overflow: ellipsis;
+
+  @media (min-width: @tablet) {
+    .font-size(20);
+    .line-height(23);
+  }
 }
 
 .player__button {
