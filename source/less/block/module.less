@@ -203,7 +203,7 @@
   }
 }
 
-.module__stats {
+.module__foot {
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
@@ -220,14 +220,19 @@
   }
 }
 
-.module__degree {
+.module__left,
+.module__right {
   display: block;
+  width: 48%;
+  margin: 0;
 
-  @media (min-width: @tablet) {
-    margin-right: 20px;
+  strong {
+    white-space: nowrap;
   }
 }
 
-.module__humidity {
-  display: block;
+.module__left {
+  @media (min-width: @tablet) {
+    margin-right: 20px;
+  }
 }

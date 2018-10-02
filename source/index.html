@@ -269,11 +269,11 @@
       </div>
       <div class="module__message">
         Установлен климатический режим «Фиджи»
-        <div class="module__stats">
-          <span class="module__degree">
+        <div class="module__foot">
+          <span class="module__left">
             Температура: <strong>24 C</strong>
           </span>
-          <span class="module__humidity">
+          <span class="module__right">
             Влажность: <strong>80%</strong>
           </span>
         </div>
@@ -328,7 +328,10 @@
         </div>
       </div>
       <div class="module__message">
-        Сейчас проигрывается:
+        <div class="player">
+          <p>Сейчас проигрывается:</p>
+
+        </div>
       </div>
       <button class="module__close" type="button">
         <svg width="14" height="14" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
@@ -355,6 +358,14 @@
       </div>
       <div class="module__message">
         Кажется, в холодильнике заканчивается молоко. Вы хотите добавить его в список покупок?
+        <div class="module__foot">
+          <p class="module__left">
+            <button class="button button--yellow" type="button">Да</button>
+          </p>
+          <p class="module__right">
+            <button class="button button--gray" type="button">Нет</button>
+          </p>
+        </div>
       </div>
       <button class="module__close" type="button">
         <svg width="14" height="14" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
@@ -464,13 +475,13 @@
       </div>
     </div>
     <div class="module__message">
-      <div class="module__stats">
-          <span class="module__degree">
-            Температура: <strong></strong>
-          </span>
-        <span class="module__humidity">
-            Влажность: <strong></strong>
-          </span>
+      <div class="module__foot">
+        <span class="module__left">
+          Температура: <strong></strong>
+        </span>
+        <span class="module__right">
+          Влажность: <strong></strong>
+        </span>
       </div>
       <picture>
         <source srcset="images/image@1x.webp 1x, images/image@2x.webp 2x" type="image/webp">
