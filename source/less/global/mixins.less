@@ -31,3 +31,15 @@
     padding-left: 40px;
   }
 }
+
+.font-size(@font-size: @baseFontSize) {
+  @rem: (@font-size / @baseFontSize);
+  font-size: @font-size * 1px;
+  font-size: ~"@{rem}rem";
+}
+
+.line-height(@line-height: @baseFontSize) {
+  @rem: (@line-height / @baseFontSize);
+  line-height: @line-height * 1px;
+  line-height: ~"@{rem}rem";
+}
