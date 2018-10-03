@@ -21,7 +21,7 @@ gulp.task('html', function () {
       indent_char: ' ',
       indent_size: 2
     }))
-    .pipe(gulp.dest('./build'));
+    .pipe(gulp.dest('./docs'));
 });
 
 gulp.task('css', function () {
@@ -32,11 +32,11 @@ gulp.task('css', function () {
       browsers: ['last 4 versions'],
       cascade: false
     }))
-    .pipe(gulp.dest('./build/css'))
+    .pipe(gulp.dest('./docs/css'))
     .pipe(cssmin())
     .pipe(rename({suffix: '.min'}))
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest('./build/css'));
+    .pipe(gulp.dest('./docs/css'));
 });
 
 gulp.task('js', function () {
@@ -46,11 +46,11 @@ gulp.task('js', function () {
       basepath: '@file'
     }))
     .pipe(sourcemaps.init())
-    .pipe(gulp.dest('./build/js'))
+    .pipe(gulp.dest('./docs/js'))
     .pipe(uglify())
     .pipe(rename({suffix: '.min'}))
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest('./build/js'));
+    .pipe(gulp.dest('./docs/js'));
 });
 
 gulp.task('images', function () {
@@ -63,7 +63,7 @@ gulp.task('images', function () {
         ]
       })
     ]))
-    .pipe(gulp.dest('./build/images'));
+    .pipe(gulp.dest('./docs/images'));
 });
 
 gulp.task('watch', function () {
@@ -74,7 +74,7 @@ gulp.task('watch', function () {
 });
 
 gulp.task('clean', function () {
-  return del(['build/**/*']);
+  return del(['docs/**/*']);
 });
 
 gulp.task('default', gulpSequence('clean', ['html', 'css', 'js', 'images']));
