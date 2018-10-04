@@ -230,19 +230,21 @@ body {
   }
 }
 .wrap {
-  max-width: 2000px;
+  max-width: 100%;
   margin: 0 auto;
   padding-right: 20px;
   padding-left: 20px;
 }
 @media (min-width: 768px) {
   .wrap {
-    max-width: 1200px;
+    max-width: 1100px;
+    padding-right: 30px;
+    padding-left: 30px;
   }
 }
 @media (min-width: 1441px) {
   .wrap {
-    max-width: 1920px;
+    max-width: 2000px;
     padding-right: 40px;
     padding-left: 40px;
   }
@@ -581,7 +583,7 @@ input[type="radio"].visually-hidden {
 }
 @media (min-width: 480px) {
   .grid__cell--m {
-    grid-column: span 2;
+    grid-column: span 4;
     grid-row: span 1;
   }
 }
@@ -809,6 +811,7 @@ input[type="radio"].visually-hidden {
 }
 @media (min-width: 768px) {
   .module__type {
+    margin-right: 10px;
     margin-bottom: 15px;
   }
 }
