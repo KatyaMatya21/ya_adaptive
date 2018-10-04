@@ -62,35 +62,53 @@ for (var i = 0; i < events.length; i++) {
   }
 
   // data
-  if (typeof events[i].data !== 'undefined') {
+  if ('data' in events[i]) {
 
     // data.image
-    if (typeof events[i].data.image !== 'undefined') {
+    if ('image' in events[i].data) {
       var picture = modulePicture.cloneNode(true);
       module.querySelector('.module__message').appendChild(picture);
     }
 
     // data.buttons
-    if (typeof events[i].data.buttons !== 'undefined') {
+    if ('buttons' in events[i].data) {
       var buttons = moduleButtons.cloneNode(true);
+
+      var buttonsList = buttons.querySelectorAll('.button');
+
+      for (var j = 0; j < buttonsList.length; j++) {
+        buttonsList[j].textContent = events[i].data.buttons[j];
+      }
+
       module.querySelector('.module__message').appendChild(buttons);
     }
 
     // data.albumcover
-    if (typeof events[i].data.albumcover !== 'undefined') {
+    if ('albumcover' in events[i].data) {
       var player = modulePlayer.cloneNode(true);
+
+      player.querySelector('.player__image').setAttribute('src', events[i].data.albumcover);
+      player.querySelector('.player__name').textContent = events[i].data.artist + ' – ' + events[i].data.track.name;
+      player.querySelector('.player__song .player__num').textContent = events[i].data.track.length;
+      player.querySelector('.player__controls .player__num').textContent = events[i].data.volume + '%';
+
       module.querySelector('.module__message').appendChild(player);
     }
 
     // data.temperature
-    if (typeof events[i].data.temperature !== 'undefined') {
+    if ('temperature' in events[i].data) {
       var stats = moduleStats.cloneNode(true);
+
+      stats.querySelector('.module__degree strong').textContent = events[i].data.temperature + ' C';
+      stats.querySelector('.module__humidity strong').textContent = events[i].data.humidity + '%';
+
       module.querySelector('.module__message').appendChild(stats);
     }
 
     // data.type
-    if (typeof events[i].data.type !== 'undefined') {
+    if ('type' in events[i].data) {
       var graph = moduleGraph.cloneNode(true);
+
       module.querySelector('.module__message').appendChild(graph);
     }
 
