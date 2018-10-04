@@ -29,7 +29,7 @@ if (xhr.status != 200) {
 
 var events = data.events;
 
-for (var i = 0; i < events.length - 1; i++) {
+for (var i = 0; i < events.length; i++) {
 
   var module = moduleTemplate.cloneNode(true);
 
