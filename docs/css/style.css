@@ -918,23 +918,7 @@ input[type="radio"].visually-hidden {
 }
 .player {
   margin: 0;
-  margin-top: auto;
-}
-.player__text {
-  font-size: 18px;
-  font-size: 1.5rem;
-  line-height: 22px;
-  line-height: 1.8333333333333333rem;
-  margin: 0;
-  margin-bottom: 20px;
-}
-@media (min-width: 768px) {
-  .player__text {
-    font-size: 20px;
-    font-size: 1.6666666666666667rem;
-    line-height: 23px;
-    line-height: 1.9166666666666667rem;
-  }
+  margin-top: 20px;
 }
 .player__right {
   position: relative;

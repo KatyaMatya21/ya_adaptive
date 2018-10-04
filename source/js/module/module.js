@@ -1,10 +1,3 @@
-var buttonMenu = document.querySelector('.js-menu-button');
-var menu = document.querySelector('.header-menu');
-
-buttonMenu.addEventListener('click', function () {
-  menu.classList.toggle('header-menu--opened');
-});
-
 var grid = document.querySelector('.grid');
 
 var template = document.querySelector('#moduleTemplate');
@@ -105,4 +98,3 @@ for (var i = 0; i < events.length - 1; i++) {
 
   grid.appendChild(module);
 }
-

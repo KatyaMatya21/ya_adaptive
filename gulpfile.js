@@ -58,6 +58,11 @@ gulp.task('js', function () {
     .pipe(gulp.dest('./docs/js'));
 });
 
+gulp.task('json', function () {
+  return gulp.src('./events.json')
+    .pipe(gulp.dest('./docs'));
+});
+
 gulp.task('images', function () {
   return gulp.src('./source/images/*')
     .pipe(imagemin([
@@ -83,4 +88,4 @@ gulp.task('clean', function () {
   return del(['docs/**/*']);
 });
 
-gulp.task('default', gulpSequence('clean', ['html', 'css', 'js', 'images', 'fonts']));
+gulp.task('default', gulpSequence('clean', ['html', 'css', 'js', 'json', 'images', 'fonts']));
