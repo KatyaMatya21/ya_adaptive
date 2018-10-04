@@ -644,20 +644,20 @@ input[type="radio"].visually-hidden {
 .module:focus-within .module__next {
   display: block;
 }
-.module--alert {
+.module--critical {
   color: #ffffff;
   background-color: #db5341;
 }
-.module--alert:hover,
-.module--alert:focus,
-.module--alert:focus-within {
+.module--critical:hover,
+.module--critical:focus,
+.module--critical:focus-within {
   background-color: #c94c3c;
 }
-.module--alert .module__close,
-.module--alert .module__next {
+.module--critical .module__close,
+.module--critical .module__next {
   color: #ffffff;
 }
-.module--alert .module__icon {
+.module--critical .module__icon {
   color: #ffffff;
 }
 .module__close,

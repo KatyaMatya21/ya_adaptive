@@ -22,58 +22,55 @@ if (xhr.status != 200) {
 
 var events = data.events;
 
+function createElementFromHTML(htmlString) {
+  var div = document.createElement('div');
+  div.innerHTML = htmlString.trim();
+  return div.firstChild;
+}
+
+function parseTemplate(template, variables) {
+  var result = template.outerHTML;
+  Object.keys(variables).forEach(function (key) {
+    if (variables[key] === null) {
+      variables[key] = '';
+    }
+    result = result.replace('{{ ' + key + ' }}', variables[key]);
+  });
+  return createElementFromHTML(result);
+}
+
 for (var i = 0; i < events.length; i++) {
 
   var module = moduleTemplate.cloneNode(true);
+  module = parseTemplate(moduleTemplate, events[i]);
 
-  // type
-  if (events[i].type ===  'critical') {
-    module.classList.add('module--alert');
-  }
-
-  // title
-  module.querySelector('.module__title').innerHTML += events[i].title;
-
-  // source
-  module.querySelector('.module__type').textContent = events[i].source;
-
-  // time
-  module.querySelector('.module__date').textContent = events[i].time;
-
-  // description
-  if (events[i].description !== null) {
-    module.querySelector('.module__message').textContent = events[i].description;
-  }
-
-  // icon
-  module.querySelector('.module__icon svg use').setAttributeNS('http://www.w3.org/1999/xlink','href','#' + events[i].icon);
-
-  // size
-  switch(events[i].size) {
-    case 'm':
-      module.classList.add('grid__cell--m');
-      break;
-    case 'l':
-      module.classList.add('grid__cell--l');
-      break;
-    default:
-      module.classList.add('grid__cell--s');
-      break
-  }
-
-  // data
   if ('data' in events[i]) {
 
-    // data.image
-    if ('image' in events[i].data) {
-      var picture = modulePicture.cloneNode(true);
-      module.querySelector('.module__message').appendChild(picture);
+    if (events[i].icon === 'stats') {
+      var graph = moduleGraph.cloneNode(true);
+      module.querySelector('.module__message').appendChild(graph);
     }
 
-    // data.buttons
-    if ('buttons' in events[i].data) {
-      var buttons = moduleButtons.cloneNode(true);
+    if (events[i].icon === 'thermal') {
+      var stats = moduleStats.cloneNode(true);
+      stats = parseTemplate(moduleStats, events[i].data);
+      module.querySelector('.module__message').appendChild(stats);
+    }
 
+    if (events[i].icon === 'music') {
+      var player = modulePlayer.cloneNode(true);
+      player = parseTemplate(modulePlayer, {
+        albumcover: events[i].data.albumcover,
+        artist: events[i].data.artist,
+        name: events[i].data.track.name,
+        length: events[i].data.track.length,
+        volume: events[i].data.volume
+      });
+      module.querySelector('.module__message').appendChild(player);
+    }
+
+    if (events[i].icon === 'fridge') {
+      var buttons = moduleButtons.cloneNode(true);
       var buttonsList = buttons.querySelectorAll('.button');
 
       for (var j = 0; j < buttonsList.length; j++) {
@@ -83,33 +80,9 @@ for (var i = 0; i < events.length; i++) {
       module.querySelector('.module__message').appendChild(buttons);
     }
 
-    // data.albumcover
-    if ('albumcover' in events[i].data) {
-      var player = modulePlayer.cloneNode(true);
-
-      player.querySelector('.player__image').setAttribute('src', events[i].data.albumcover);
-      player.querySelector('.player__name').textContent = events[i].data.artist + ' – ' + events[i].data.track.name;
-      player.querySelector('.player__song .player__num').textContent = events[i].data.track.length;
-      player.querySelector('.player__controls .player__num').textContent = events[i].data.volume + '%';
-
-      module.querySelector('.module__message').appendChild(player);
-    }
-
-    // data.temperature
-    if ('temperature' in events[i].data) {
-      var stats = moduleStats.cloneNode(true);
-
-      stats.querySelector('.module__degree strong').textContent = events[i].data.temperature + ' C';
-      stats.querySelector('.module__humidity strong').textContent = events[i].data.humidity + '%';
-
-      module.querySelector('.module__message').appendChild(stats);
-    }
-
-    // data.type
-    if ('type' in events[i].data) {
-      var graph = moduleGraph.cloneNode(true);
-
-      module.querySelector('.module__message').appendChild(graph);
+    if (events[i].icon === 'cam') {
+      var picture = modulePicture.cloneNode(true);
+      module.querySelector('.module__message').appendChild(picture);
     }
 
   }
