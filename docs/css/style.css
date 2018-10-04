@@ -829,6 +829,9 @@ input[type="radio"].visually-hidden {
     padding: 25px;
   }
 }
+.module__message--disabled {
+  display: none;
+}
 .module__image,
 .module__graph {
   width: 100%;

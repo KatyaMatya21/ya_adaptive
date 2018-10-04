@@ -44,6 +44,10 @@ for (var i = 0; i < events.length; i++) {
   var module = moduleTemplate.cloneNode(true);
   module = parseTemplate(moduleTemplate, events[i]);
 
+  if (events[i].description === '') {
+    module.querySelector('.module__message').classList.add('module__message--disabled');
+  }
+
   if ('data' in events[i]) {
 
     if (events[i].icon === 'stats') {
