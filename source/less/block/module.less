@@ -19,7 +19,11 @@
 
     .module__close,
     .module__next {
-      display: block;
+      display: none;
+
+      @media (min-width: @tablet) {
+        display: block;
+      }
     }
   }
 }
@@ -35,8 +39,7 @@
     background-color: @orange-dark;
   }
 
-  .module__close,
-  .module__next {
+  .module__close {
     color: #ffffff;
   }
 

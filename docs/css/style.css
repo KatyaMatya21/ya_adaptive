@@ -642,7 +642,17 @@ input[type="radio"].visually-hidden {
 .module:hover .module__next,
 .module:focus .module__next,
 .module:focus-within .module__next {
-  display: block;
+  display: none;
+}
+@media (min-width: 768px) {
+  .module:hover .module__close,
+  .module:focus .module__close,
+  .module:focus-within .module__close,
+  .module:hover .module__next,
+  .module:focus .module__next,
+  .module:focus-within .module__next {
+    display: block;
+  }
 }
 .module--critical {
   color: #ffffff;
@@ -653,8 +663,7 @@ input[type="radio"].visually-hidden {
 .module--critical:focus-within {
   background-color: #c94c3c;
 }
-.module--critical .module__close,
-.module--critical .module__next {
+.module--critical .module__close {
   color: #ffffff;
 }
 .module--critical .module__icon {
@@ -982,6 +991,7 @@ input[type="radio"].visually-hidden {
   height: 20px;
   padding: 0;
   background-color: #d8d8d8;
+  border: none;
   border-radius: 5px;
   cursor: pointer;
 }
