@@ -210,12 +210,19 @@
     <button class="button button--gray" type="button"></button>
   </p>
 
-  <picture class="module__picture">
-    <source srcset="images/robot-cleaner@2x.webp 1x, images/robot-cleaner@3x.webp 2x" media="(min-width: 1440px)" type="image/webp">
-    <source srcset="images/robot-cleaner@2x.jpg 1x, images/robot-cleaner@3x.jpg 2x" media="(min-width: 1440px)">
-    <source srcset="images/robot-cleaner@1x.webp 1x, images/robot-cleaner@2x.webp 2x" type="image/webp">
-    <img class="module__image" src="images/robot-cleaner@1x.jpg" srcset="images/robot-cleaner@1x.jpg 1x, images/robot-cleaner@2x.jpg 2x" alt="Вид с камеры в гостиной">
-  </picture>
+  <a class="module__picture" href="https://katyamatya21.github.io/ya_sensor/">
+    <picture>
+      <source srcset="images/robot-cleaner@2x.webp 1x, images/robot-cleaner@3x.webp 2x" media="(min-width: 1440px)" type="image/webp">
+      <source srcset="images/robot-cleaner@2x.jpg 1x, images/robot-cleaner@3x.jpg 2x" media="(min-width: 1440px)">
+      <source srcset="images/robot-cleaner@1x.webp 1x, images/robot-cleaner@2x.webp 2x" type="image/webp">
+      <img class="module__image" src="images/robot-cleaner@1x.jpg" srcset="images/robot-cleaner@1x.jpg 1x, images/robot-cleaner@2x.jpg 2x" alt="Вид с камеры в гостиной">
+    </picture>
+    <span class="module__indicator"><span class="visually-hidden">Я ползунок!</span></span>
+  </a>
+  <div class="module__cam-details">
+    <span>Приближение: <strong>78%</strong></span>
+    <span>Яркость: <strong>50%</strong></span>
+  </div>
 
 </template>
 

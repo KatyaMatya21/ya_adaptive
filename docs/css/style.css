@@ -860,13 +860,15 @@ input[type="radio"].visually-hidden {
 }
 .module__image,
 .module__graph {
+  display: block;
   width: 100%;
   height: auto;
-  margin-top: 20px;
   border-radius: 20px;
 }
+.module__graph {
+  margin-top: 20px;
+}
 @media (min-width: 768px) {
-  .module__image,
   .module__graph {
     margin-top: 30px;
   }
@@ -943,6 +945,50 @@ input[type="radio"].visually-hidden {
 @media (min-width: 768px) {
   .module__buttons .button:first-child {
     margin-right: 20px;
+  }
+}
+.module__picture {
+  position: relative;
+  display: block;
+  margin-top: 20px;
+}
+@media (min-width: 768px) {
+  .module__picture {
+    margin-top: 30px;
+  }
+}
+.module__indicator {
+  position: absolute;
+  bottom: 7px;
+  left: 30%;
+  display: block;
+  width: 30%;
+  height: 2px;
+  background-color: #000000;
+  border-radius: 2px;
+  opacity: 0.5;
+}
+@media (min-width: 768px) {
+  .module__indicator {
+    display: none;
+  }
+}
+.module__cam-details {
+  font-size: 12px;
+  font-size: 1rem;
+  line-height: 14px;
+  line-height: 1.1666666666666667rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin-top: 3px;
+}
+@media (min-width: 768px) {
+  .module__cam-details {
+    display: none;
   }
 }
 .player {
