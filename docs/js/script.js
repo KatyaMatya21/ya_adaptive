@@ -1,6 +1,9 @@
 var buttonMenu = document.querySelector('.js-menu-button');
 var menu = document.querySelector('.header-menu');
 
+/**
+ * EventListener on click menu button
+ */
 buttonMenu.addEventListener('click', function () {
   menu.classList.toggle('header-menu--opened');
 });
@@ -30,12 +33,23 @@ if (xhr.status != 200) {
 
 var events = data.events;
 
+/**
+ * Creates element from html
+ * @param htmlString
+ * @returns {Node}
+ */
 function createElementFromHTML(htmlString) {
   var div = document.createElement('div');
   div.innerHTML = htmlString.trim();
   return div.firstChild;
 }
 
+/**
+ * Parses template and replaces parameters
+ * @param template
+ * @param variables
+ * @returns {Node}
+ */
 function parseTemplate(template, variables) {
   var result = template.outerHTML;
   Object.keys(variables).forEach(function (key) {
